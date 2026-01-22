@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from eegfmri-denoising!")
+from .denoising import remove_gradients
+
+__all__ = ['remove_gradients']
