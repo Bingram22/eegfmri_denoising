@@ -120,4 +120,4 @@ def remove_gradients(
 
     # Return as RawArray
     clean_raw = mne.io.RawArray(cleaned_data, raw.info)
-    return clean_raw, cleaned_epochs
+    return clean_raw
