@@ -1,6 +1,4 @@
 import mne
-import numpy as np
-
 
 def remove_gradients(
     raw,
@@ -13,7 +11,7 @@ def remove_gradients(
     Remove gradient artifact from raw M/EEG data while keeping the full recording.
     """
     ### Load data + parse args
-
+    raw = raw.copy()
     raw.load_data()
 
     sliding_window = True
@@ -27,7 +25,6 @@ def remove_gradients(
         window_length += 1
         print(f"Window length must be odd. Window length is now {window_length}")
 
-
     # get events
 
     events, events_id = mne.events_from_annotations(raw)
@@ -40,8 +37,8 @@ def remove_gradients(
     if number_of_events < 2:
         raise ValueError("Need at least 2 events to compute TR.")
 
-    # Compute TR 
-
+    # Compute TR
+    ### TODO create this into a helper function
     tr_samples = relevant_events[1][0] - relevant_events[0][0]
     sfreq = raw.info["sfreq"]
     tr_sec = tr_samples / sfreq
@@ -89,3 +86,8 @@ def remove_gradients(
             raw._data[ch, start:stop] -= noise_avg
 
     return raw
+
+
+def r_peak_detection(raw):
+    out = raw.copy()
+    return
