@@ -90,4 +90,5 @@ def remove_gradients(
 
 def r_peak_detection(raw):
     out = raw.copy()
-    return
+    
+    return out
