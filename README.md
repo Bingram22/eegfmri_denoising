@@ -42,5 +42,12 @@ uv install eegfmri_denoising
 4. cd to the repo
 5. Run "uv sync" to install dependencies
 
+## References
+- Allen, P. J., Josephs, O., & Turner, R. (2000). A method for removing imaging artifact from continuous EEG recorded during functional MRI. Neuroimage, 12(2), 230-239.
+- Allen, P. J., Polizzi, G., Krakow, K., Fish, D. R., & Lemieux, L. (1998). Identification of EEG events in the MR scanner: the problem of pulse artifact and a method for its subtraction. Neuroimage, 8(3), 229-239.
+- Niazy, R. K., Beckmann, C. F., Iannetti, G. D., Brady, J. M., & Smith, S. M. (2005). Removal of FMRI environment artifacts from EEG data using optimal basis sets. Neuroimage, 28(3), 720-737.
+- van der Meer, J. N., Pampel, A., Van Someren, E. J., Ramautar, J. R., van der Werf, Y. D., Gomez-Herrero, G., ... & Walter, M. (2016). Carbon-wire loop based artifact correction outperforms post-processing EEG/fMRI corrections—A validation of a real-time simultaneous EEG/fMRI correction method. Neuroimage, 125, 880-894.
+- Yan, W. X., Mullinger, K. J., Geirsdottir, G. B., & Bowtell, R. (2010). Physical modeling of pulse artefact sources in simultaneous EEG/fMRI. Human brain mapping, 31(4), 604-620.
+- Yan, W. X., Mullinger, K. J., Brookes, M. J., & Bowtell, R. (2009). Understanding gradient artefacts in simultaneous EEG/fMRI. Neuroimage, 46(2), 459-471.
 ## Example Usage
 TBC
