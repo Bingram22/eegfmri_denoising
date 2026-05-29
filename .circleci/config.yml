@@ -16,7 +16,30 @@ jobs:
           name: Run tests
           command: uv run pytest
 
+  publish:
+    docker:
+      - image: cimg/python:3.12
+    steps:
+      - checkout
+      - run:
+          name: Install uv
+          command: curl -LsSf https://astral.sh/uv/install.sh | sh && echo 'export PATH="$HOME/.local/bin:$PATH"' >> $BASH_ENV
+      - run:
+          name: Build and publish
+          command: uv build && uv publish --token $PYPI_TOKEN
+
 workflows:
   main:
     jobs:
-      - test
+      - test:
+          filters:
+            tags:
+              only: /.*/
+      - publish:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
