@@ -1,27 +1,30 @@
 import mne
 import matplotlib.pyplot as plt
 import numpy as np
-print('works')
-raw = mne.io.read_raw(r'C:\Users\Peter\OneDrive\Desktop\NeuroHackathon\eegfmri_denoising\hackathon_data\bids_dataset\sub-example\eeg\sub-example_task-rest_eeg.vhdr')
+
+print("works")
+raw = mne.io.read_raw(
+    r"C:\Users\Peter\OneDrive\Desktop\NeuroHackathon\eegfmri_denoising\hackathon_data\bids_dataset\sub-example\eeg\sub-example_task-rest_eeg.vhdr"
+)
 
 print(raw)
 # raw.plot(picks = ['O1'])
 # plt.show()
-data= raw.get_data(picks = ['O1'])
-CWL_data1 = raw.get_data(picks = ['CWL1'])
-CWL_data2 = raw.get_data(picks = ['CWL2'])
-#cwl1, cwl2
-print(f'data is{type(data)}\ndata shape is {data.shape}')
-reduced_data = data[:,16000:19000]
-reduced_CWL_data1 = CWL_data1[:,16000:19000]
-reduced_CWL_data2 = CWL_data2[:,16000:19000]
+data = raw.get_data(picks=["O1"])
+CWL_data1 = raw.get_data(picks=["CWL1"])
+CWL_data2 = raw.get_data(picks=["CWL2"])
+# cwl1, cwl2
+print(f"data is{type(data)}\ndata shape is {data.shape}")
+reduced_data = data[:, 16000:19000]
+reduced_CWL_data1 = CWL_data1[:, 16000:19000]
+reduced_CWL_data2 = CWL_data2[:, 16000:19000]
 
-print(f'reduced_data shape is {reduced_data.shape}')
+print(f"reduced_data shape is {reduced_data.shape}")
 fig, ax = plt.subplots(3)
-fig.suptitle('15k-20k data')
-ax[0].plot(reduced_data[0,:])
-ax[1].plot(reduced_CWL_data1[0,:])
-ax[2].plot(reduced_CWL_data2[0,:])
+fig.suptitle("15k-20k data")
+ax[0].plot(reduced_data[0, :])
+ax[1].plot(reduced_CWL_data1[0, :])
+ax[2].plot(reduced_CWL_data2[0, :])
 plt.show()
 # plt.figure(figsize= (5,8))
 # plt.plot(data_x)
@@ -32,7 +35,7 @@ plt.show()
 
 # print(data)
 
-#remove gradients func from debug notebook
+# remove gradients func from debug notebook
 def remove_gradients(
     raw,
     event_name="Gradient/G  1",
@@ -81,7 +84,7 @@ def remove_gradients(
     # Apply offset ONCE (in samples)
     # -----------------------------
     offset_samp = int(round(event_offset * sfreq))
-    print(f'OFFSET SAMP = {offset_samp}')
+    print(f"OFFSET SAMP = {offset_samp}")
     grad_events[:, 0] += offset_samp
 
     # -----------------------------
@@ -98,7 +101,10 @@ def remove_gradients(
         raw,
         grad_events,
         tmin=0,
-        tmax=tr_sec- (1 / sfreq), ### TODO - (1 / sfreq) THIS IS VERY IMPORTANT, DO WE DEFO NEED IT? IS IT DOING WHAT WE THINK
+        tmax=tr_sec
+        - (
+            1 / sfreq
+        ),  ### TODO - (1 / sfreq) THIS IS VERY IMPORTANT, DO WE DEFO NEED IT? IS IT DOING WHAT WE THINK
         baseline=None,
         preload=True,
         reject_by_annotation=True,
