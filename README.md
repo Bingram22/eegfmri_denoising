@@ -15,8 +15,8 @@
   <a href="https://dl.circleci.com/status-badge/redirect/gh/Bingram22/eegfmri_denoising/tree/main">
     <img alt="CircleCI" src="https://dl.circleci.com/status-badge/img/gh/Bingram22/eegfmri_denoising/tree/main.svg?style=shield">
   </a>
-  <a href="https://codecov.io/gh/Bingram22/eegfmri_denoising">
-    <img alt="Coverage" src="https://codecov.io/gh/Bingram22/eegfmri_denoising/branch/main/graph/badge.svg">
+  <a href="https://codecov.io/github/Bingram22/eegfmri_denoising">
+    <img alt="Coverage" src="https://codecov.io/github/Bingram22/eegfmri_denoising/graph/badge.svg?token=6AST29VDKV">
   </a>
   <a href="https://opensource.org/licenses/Apache-2.0">
     <img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg">
