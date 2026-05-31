@@ -11,6 +11,7 @@ dependencies = [
     "mne>=1.11.0",
     "numpy>=2.4.1",
     "pre-commit>=4.6.0",
+    "pypulseq>=1.5.0.post1",
     "pytest>=9.0.2",
     "ruff>=0.14.13",
 ]
@@ -21,3 +22,8 @@ eegfmri-denoising = "eegfmri_denoising:main"
 [build-system]
 requires = ["uv_build>=0.8.22,<0.9.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "sphinx>=9.0.4",
+]

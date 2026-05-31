@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>eegfmri_denoising package &#8212; EEG-fMRI Denoising 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="eegfmri_denoising" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="eegfmri-denoising-package">
+<h1>eegfmri_denoising package<a class="headerlink" href="#eegfmri-denoising-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-eegfmri_denoising.datasets">
+<span id="eegfmri-denoising-datasets-module"></span><h2>eegfmri_denoising.datasets module<a class="headerlink" href="#module-eegfmri_denoising.datasets" title="Link to this heading">¶</a></h2>
+<p>Module eegfmri_denoising/datasets.py</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="eegfmri_denoising.datasets.fetch_example_data">
+<span class="sig-prename descclassname"><span class="pre">eegfmri_denoising.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_example_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.datasets.fetch_example_data" title="Link to this definition">¶</a></dt>
+<dd><p>Download and cache the example resting state EEG-fMRI dataset.
+Returns the path to the local BIDS dataset root.</p>
+</dd></dl>
+
+</section>
+<section id="module-eegfmri_denoising.denoising">
+<span id="eegfmri-denoising-denoising-module"></span><h2>eegfmri_denoising.denoising module<a class="headerlink" href="#module-eegfmri_denoising.denoising" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="eegfmri_denoising.denoising.r_peak_detection">
+<span class="sig-prename descclassname"><span class="pre">eegfmri_denoising.denoising.</span></span><span class="sig-name descname"><span class="pre">r_peak_detection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.denoising.r_peak_detection" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="eegfmri_denoising.denoising.remove_gradients">
+<span class="sig-prename descclassname"><span class="pre">eegfmri_denoising.denoising.</span></span><span class="sig-name descname"><span class="pre">remove_gradients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Gradient/G</span>&#160; <span class="pre">1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline_correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.denoising.remove_gradients" title="Link to this definition">¶</a></dt>
+<dd><p>Remove gradient artifact from raw M/EEG data while keeping the full recording.</p>
+</dd></dl>
+
+</section>
+<section id="module-eegfmri_denoising.quality_assurance">
+<span id="eegfmri-denoising-quality-assurance-module"></span><h2>eegfmri_denoising.quality_assurance module<a class="headerlink" href="#module-eegfmri_denoising.quality_assurance" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="eegfmri_denoising.quality_assurance.get_rms">
+<span class="sig-prename descclassname"><span class="pre">eegfmri_denoising.quality_assurance.</span></span><span class="sig-name descname"><span class="pre">get_rms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Gradient/G</span>&#160; <span class="pre">1'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.quality_assurance.get_rms" title="Link to this definition">¶</a></dt>
+<dd><p>Compute RMS of gradient-locked residuals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>epochs</strong> (<em>np.ndarray</em>) – Shape (n_epochs, n_channels, n_times)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>rms</strong> – Mean RMS across channels and epochs</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-eegfmri_denoising.simulation">
+<span id="eegfmri-denoising-simulation-module"></span><h2>eegfmri_denoising.simulation module<a class="headerlink" href="#module-eegfmri_denoising.simulation" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.GradientArtefact">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">eegfmri_denoising.simulation.</span></span><span class="sig-name descname"><span class="pre">GradientArtefact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#eegfmri_denoising.simulation.SphereModel" title="eegfmri_denoising.simulation.SphereModel"><span class="pre">SphereModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_seq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#eegfmri_denoising.simulation.PulseSequence" title="eegfmri_denoising.simulation.PulseSequence"><span class="pre">PulseSequence</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_slices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_volumes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.GradientArtefact" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.GradientArtefact.A_x">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">A_x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.GradientArtefact.A_x" title="Link to this definition">¶</a></dt>
+<dd><p>Vector potential for x-gradient. Eq A4.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.GradientArtefact.A_y">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">A_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Gx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.GradientArtefact.A_y" title="Link to this definition">¶</a></dt>
+<dd><p>Vector potential for y-gradient. Eq A6.
+Note: k component is cross term with Gx — defaults to 0 for plotting.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.GradientArtefact.A_z">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">A_z</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.GradientArtefact.A_z" title="Link to this definition">¶</a></dt>
+<dd><p>Vector potential for z-gradient. Eq A2.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.GradientArtefact.get_Vx">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_Vx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dG_dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.float64(-0.2617993877991494)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.GradientArtefact.get_Vx" title="Link to this definition">¶</a></dt>
+<dd><p>Full analytic artefact voltage for transverse x-gradient. Eq 7.
+MNE coordinate system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.GradientArtefact.get_Vy">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_Vy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dG_dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.float64(-0.2617993877991494)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.GradientArtefact.get_Vy" title="Link to this definition">¶</a></dt>
+<dd><p>Full analytic artefact voltage for transverse y-gradient.
+Vy = Vx with beta -&gt; beta + pi/2. MNE coordinate system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.GradientArtefact.get_Vz">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_Vz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dG_dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.float64(-0.2617993877991494)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.GradientArtefact.get_Vz" title="Link to this definition">¶</a></dt>
+<dd><p>Full analytic artefact voltage for longitudinal (z) gradient. Eq 6.
+MNE coordinate system. Default alpha=15° for realistic head tilt.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.GradientArtefact.plot_field">
+<span class="sig-name descname"><span class="pre">plot_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'z'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.GradientArtefact.plot_field" title="Link to this definition">¶</a></dt>
+<dd><p>Plot sphere and A field vectors in 3D — for visual inspection.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.GradientArtefact.simulate">
+<span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ref_channel_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Cz'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eeg_sfreq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.float64(0.2617993877991494)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.GradientArtefact.simulate" title="Link to this definition">¶</a></dt>
+<dd><p>Simulate gradient artefact for all channels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref_channel_name</strong> (<em>str   — reference electrode name</em>)</p></li>
+<li><p><strong>eeg_sfreq</strong> (<em>float — target EEG sampling frequency</em><em> (</em><em>Hz</em><em>)</em>)</p></li>
+<li><p><strong>alpha</strong> (<em>float — pitch angle in radians</em><em> (</em><em>default 15°</em><em>)</em>)</p></li>
+<li><p><strong>beta</strong> (<em>float — yaw angle in radians</em><em> (</em><em>default 0°</em><em>)</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>bore_offset (MNE y) enters equations as z0 (paper’s bore axis).
+phi uses standard MNE convention arctan2(y, x) — coordinate
+transform is baked into get_Vx/Vy/Vz equations.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.PulseSequence">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">eegfmri_denoising.simulation.</span></span><span class="sig-name descname"><span class="pre">PulseSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sfreq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.PulseSequence" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Defines gradient waveforms and timing for a simulated pulse sequence.
+This is used to simulate the gradient artefact and BCG artefact in the EEG data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.PulseSequence.load_seq">
+<span class="sig-name descname"><span class="pre">load_seq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pulse_seq_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GAMMA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42576000.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.PulseSequence.load_seq" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.PulseSequence.load_standard_epi">
+<span class="sig-name descname"><span class="pre">load_standard_epi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.PulseSequence.load_standard_epi" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.PulseSequence.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.PulseSequence.plot" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.SphereModel">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">eegfmri_denoising.simulation.</span></span><span class="sig-name descname"><span class="pre">SphereModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bore_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_wire_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.SphereModel" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.SphereModel.great_circle_arc">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">great_circle_arc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.SphereModel.great_circle_arc" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="eegfmri_denoising.simulation.SphereModel.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.simulation.SphereModel.plot" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-eegfmri_denoising">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-eegfmri_denoising" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="eegfmri_denoising.remove_gradients">
+<span class="sig-prename descclassname"><span class="pre">eegfmri_denoising.</span></span><span class="sig-name descname"><span class="pre">remove_gradients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Gradient/G</span>&#160; <span class="pre">1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline_correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eegfmri_denoising.remove_gradients" title="Link to this definition">¶</a></dt>
+<dd><p>Remove gradient artifact from raw M/EEG data while keeping the full recording.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">EEG-fMRI Denoising</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">eegfmri_denoising</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">eegfmri_denoising package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">eegfmri_denoising</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">eegfmri_denoising</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Brandon T Ingram.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/eegfmri_denoising.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
