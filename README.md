@@ -1,4 +1,6 @@
-<center> <h1>EEG-fMRI Denoising</h1> </center>
+<center>
+<h1>EEG-fMRI Denoising</h1>
+</center>
 
 <p align="center">
   <a href="https://github.com/psf/black">
@@ -7,13 +9,17 @@
   <a href="https://pypi.org/project/eegfmri-denoising/">
     <img alt="PyPI version" src="https://img.shields.io/pypi/v/eegfmri-denoising">
   </a>
-  <a href="#">
-    <img alt="Coverage" src="https://img.shields.io/badge/coverage-83%25-yellowgreen">
+  <a href="https://pypi.org/project/eegfmri-denoising/">
+    <img alt="Python versions" src="https://img.shields.io/pypi/pyversions/eegfmri-denoising.svg">
+  </a>
+  <a href="https://dl.circleci.com/status-badge/redirect/gh/Bingram22/eegfmri_denoising/tree/main">
+    <img alt="CircleCI" src="https://dl.circleci.com/status-badge/img/gh/Bingram22/eegfmri_denoising/tree/main.svg?style=svg">
+  </a>
+  <a href="https://codecov.io/gh/Bingram22/eegfmri_denoising">
+    <img alt="Coverage" src="https://codecov.io/gh/Bingram22/eegfmri_denoising/branch/main/graph/badge.svg">
   </a>
 </p>
 
-
----
 ## Installation
 ```
 pip install eegfmri_denoising
